@@ -24,14 +24,14 @@ func Test_DB_Connect(t *testing.T) {
 		requestBody   []byte
 	}{
 		{
-			"http://127.0.0.1:8080/api/db/connect",
+			"http://127.0.0.1:8081/api/db/connect",
 			"POST",
 			[]byte(`{"username": "user",
 					"password": "password",
 					"host": "127.0.0.1:3699"}`),
 		},
 		{
-			"http://127.0.0.1:8080/api/db/connect",
+			"http://127.0.0.1:8081/api/db/connect",
 			"POST",
 			[]byte(`{"username": "user1",
 					"password": "password",
@@ -70,7 +70,7 @@ func Test_DB_Execute(t *testing.T) {
 		requestBody   []byte
 	}{
 		{
-			"http://127.0.0.1:8080/api/db/exec",
+			"http://127.0.0.1:8081/api/db/exec",
 			"POST",
 			[]byte(`{"username" : "user",
 					"password" : "password",

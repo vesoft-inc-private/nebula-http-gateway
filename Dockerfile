@@ -13,6 +13,6 @@ WORKDIR /root
 COPY --from=builder ./nebula-http-gateway .
 COPY ./conf ./conf
 
-EXPOSE 8081
+EXPOSE 8008
 
 ENTRYPOINT ["./nebula-http-gateway"]

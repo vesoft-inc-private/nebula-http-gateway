@@ -140,3 +140,71 @@ response:
   "message": "Disconnect successfully"
 }
 ```
+
+#### Import API #### 
+
+The requested json body
+
+```json
+{
+  "configPath": "examples/v2/example.yaml"
+}
+```
+
+The description of the parameters is as follows.
+
+| Field      | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| configPath | `configPath` is a relative path undering `uploadspath` in `app.conf` |
+
+```bash
+$ curl -X POST -d "path=./examples/v2/example.yaml" http://127.0.0.1:8080/api/task/import
+```
+
+response:
+
+```json
+{
+  "code": 0,
+  "data": null,
+  "message": "Import task 0 submit successfully"
+}
+```
+
+#### Action API ####
+
+The requested json body
+
+```json
+{
+  "taskID": 0,
+  "taskAction": "stopAll"
+}
+```
+
+The description of the parameters is as follows.
+
+| Field      | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| taskID     | Set the task id to do task action                    |
+| taskAction | Enums, include: stop, stopAll, query, queryAll, etc. |
+
+```bash
+$ curl -X POST -d "taskID=0&taskAction=stopAll" http://127.0.0.1:8080/api/task/import/action
+```
+
+response:
+
+```json
+{
+    "code": 0,
+    "data": {
+        "taskIDs": [
+            "0"
+        ],
+        "taskStatus": "Task stop successfully"
+    },
+    "message": "Processing task action successfully"
+}
+```
+
